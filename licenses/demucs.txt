@@ -1,0 +1,31 @@
+Demucs (Hybrid Transformer Demucs, "HT Demucs"), by Meta Platforms, Inc. (Alexandre Défossez). MIT License.
+
+What this extension uses: the htdemucs network core, exported to ONNX from demucs 4.1.0 (models/htdemucs_core.onnx,
+which holds no weights), and its spectrogram and chunking steps, ported to TypeScript (src/structure/demucs/). The
+weights (955717e8.safetensors) are downloaded, with the user's consent, from the Hugging Face repository
+adefossez/HTDemucs (revision cbc8a9b1a87023b7fd74e7b3412e6321c0eab003). That repository's model card states no
+licence; the Demucs code, which publishes these weights, is MIT-licensed.
+
+The licence below is demucs 4.1.0's LICENSE, verbatim.
+
+MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,0 +1,111 @@
+/* The dialog in Live's own theme colours. Values are copied from Live 12's bundled "Default Light Neutral Medium" and
+   "Default Dark Neutral Medium" .ask files (token names in the comments). The SDK does not say which theme Live uses, so
+   light or dark follows the system (prefers-color-scheme): right whenever Live's Appearance is "Follow System". Tone,
+   High Contrast and custom themes cannot be seen from here. */
+:root {
+  color-scheme: light;
+  --live-surface: #a5a5a5; /* SurfaceBackground */
+  --live-fg: #121212; /* ControlForeground */
+  --live-control: #cfcfcf; /* ControlBackground */
+  --live-frame: #4f4f4f; /* ControlContrastFrame */
+  --live-on: #ffb901; /* ChosenDefault */
+  --live-on-fg: #121212; /* ControlOnForeground */
+  --live-selection: #cdf8ff; /* SelectionBackground */
+  --live-waveform: rgba(34, 34, 34, 0.94); /* WaveformColor */
+  --live-detail: #c6c6c6; /* DetailViewBackground */
+  --live-area: #6e6e6e; /* SurfaceArea */
+  --live-alert: #ff7d43; /* Alert */
+  --live-clip-border: #000000; /* ClipBorder */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --live-surface: #363636;
+    --live-fg: #b5b5b5;
+    --live-control: #1e1e1e;
+    --live-frame: #111111;
+    --live-on: #ffad56;
+    --live-on-fg: #070707;
+    --live-selection: #b0ddeb;
+    --live-waveform: rgba(23, 23, 23, 0.94);
+    --live-detail: #3e3e3e;
+    --live-area: #242424;
+    --live-alert: #e76942;
+    --live-clip-border: #2a2a2a;
+  }
+}
+
+/* Patchbay's own variables. Live has no secondary text colour (TextDisabled is for what is off), so captions are the text
+   colour eased towards the panel, as far as still reads at 4.5:1 in both schemes (liveTheme.chrome.test.ts). */
+:root {
+  --text-color: var(--live-fg);
+  --muted-text-color: color-mix(in srgb, var(--live-fg) 85%, var(--live-surface));
+  --panel-color: var(--live-surface);
+  --slider-color: var(--live-frame);
+  --indicator-color: var(--live-fg);
+  --indicator-border-color: var(--live-frame);
+  --indicator-active-color: var(--live-on);
+  --focus-border: var(--live-frame);
+  --modulation-color: var(--live-on);
+}
+
+/* Patchbay's controls hard-code a dark look; these are the ones the dialog uses, drawn as Live draws its own. */
+.tabs {
+  border-color: var(--live-frame);
+  box-shadow: none;
+}
+.tab {
+  color: var(--live-fg);
+  background: var(--live-control);
+  border-inline-end-color: var(--live-frame);
+}
+.tab.is-active {
+  color: var(--live-on-fg);
+  background: var(--live-on);
+}
+.text-button,
+.text-button[data-appearance="subtle"],
+.text-button[data-appearance="primary"] {
+  color: var(--live-fg);
+  background: var(--live-control);
+  border-color: var(--live-frame);
+  box-shadow: none;
+}
+.text-button[data-appearance="subtle"] {
+  color: var(--muted-text-color);
+}
+.text-button[data-appearance="primary"] {
+  border-color: var(--live-on);
+}
+.text-button:active,
+.text-button[data-appearance="primary"][aria-pressed="true"],
+.text-button[data-appearance="primary"]:active {
+  color: var(--live-on-fg);
+  background: var(--live-on);
+  border-color: var(--live-frame);
+  box-shadow: none;
+}
+.toggle span {
+  background: var(--live-control);
+  border-color: var(--live-frame);
+  box-shadow: none;
+}
+.toggle input:checked + span {
+  background: var(--live-on);
+  border-color: var(--live-frame);
+}
+.label {
+  color: var(--live-fg);
+}
+.slider__thumb {
+  filter: none;
+}
+.menu__option {
+  color: var(--live-fg);
+}
+.menu__option.is-active,
+.menu__option:hover,
+.menu__option:focus-visible {
+  color: var(--live-on-fg);
+  background: var(--live-on);
+}

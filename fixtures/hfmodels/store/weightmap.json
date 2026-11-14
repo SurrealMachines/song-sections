@@ -1,0 +1,206 @@
+{
+ "modelSet": "test-set",
+ "align": 64,
+ "sources": [
+  {
+   "file": "tiny.safetensors",
+   "repo": "test/tiny",
+   "revision": "0000000000000000000000000000000000000000",
+   "bytes": 160,
+   "sha256": "201d9ab077dee027bfa746e65fd804a243c940a69d5c74c58349b75a102d36e8"
+  },
+  {
+   "file": "lightning.pth",
+   "repo": "test/lightning",
+   "revision": "1111111111111111111111111111111111111111",
+   "bytes": 3290,
+   "sha256": "3b19dcd9c007a176af5b3fe4a5af0140a488dcc79f3e8626580c48499d991edd"
+  }
+ ],
+ "models": [
+  {
+   "name": "alpha.onnx",
+   "v1": {
+    "bytes": 0,
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "graph": {
+    "bytes": 126,
+    "sha256": "587468da779b35c11f7e0be20a8338e030aac09a9d866839d5de2f9f0c6b7204"
+   },
+   "weights": {
+    "name": "alpha.weights",
+    "bytes": 276,
+    "sha256": "1500f7e82ae494c1dca1a694e3a5a0220c44223ed23889841f8263f272e2999c"
+   },
+   "tensors": [
+    {
+     "name": "alpha.onnx:w16",
+     "dims": [
+      3,
+      2
+     ],
+     "offset": 0,
+     "length": 24,
+     "source": 0,
+     "key": "w16",
+     "dtype": "float16",
+     "shape": [
+      2,
+      3
+     ],
+     "perm": [
+      1,
+      0
+     ]
+    },
+    {
+     "name": "alpha.onnx:conv.weight",
+     "dims": [
+      6,
+      4
+     ],
+     "offset": 64,
+     "length": 96,
+     "source": 1,
+     "key": "conv.weight",
+     "dtype": "float32",
+     "shape": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "name": "alpha.onnx:dense.weight_t",
+     "dims": [
+      3,
+      4
+     ],
+     "offset": 192,
+     "length": 48,
+     "source": 1,
+     "key": "dense.weight_t",
+     "dtype": "float32",
+     "shape": [
+      4,
+      3
+     ],
+     "perm": [
+      1,
+      0
+     ]
+    },
+    {
+     "name": "alpha.onnx:b32",
+     "dims": [
+      5
+     ],
+     "offset": 256,
+     "length": 20,
+     "source": 0,
+     "key": "b32",
+     "dtype": "float32",
+     "shape": [
+      5
+     ]
+    }
+   ]
+  },
+  {
+   "name": "beta.onnx",
+   "v1": {
+    "bytes": 0,
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "graph": {
+    "bytes": 123,
+    "sha256": "cfddebe9597162d7b085099f891b6fb100712ff7f472f53efb46f308bd66fb32"
+   },
+   "weights": {
+    "name": "beta.weights",
+    "bytes": 280,
+    "sha256": "74d68524088bb3580713d470c494199c2b1ec6907669967d921ddce4e0d5f50f"
+   },
+   "tensors": [
+    {
+     "name": "beta.onnx:half",
+     "dims": [
+      2,
+      3
+     ],
+     "offset": 0,
+     "length": 24,
+     "source": 1,
+     "key": "half",
+     "dtype": "float16",
+     "shape": [
+      2,
+      3
+     ]
+    },
+    {
+     "name": "beta.onnx:slice",
+     "dims": [
+      4,
+      3
+     ],
+     "offset": 64,
+     "length": 48,
+     "source": 1,
+     "key": "slice",
+     "dtype": "float32",
+     "shape": [
+      3,
+      4
+     ],
+     "perm": [
+      1,
+      0
+     ]
+    },
+    {
+     "name": "beta.onnx:slice_view",
+     "dims": [
+      6
+     ],
+     "offset": 128,
+     "length": 24,
+     "source": 1,
+     "key": "slice_view",
+     "dtype": "float32",
+     "shape": [
+      6
+     ]
+    },
+    {
+     "name": "beta.onnx:scalar",
+     "dims": [
+      1
+     ],
+     "offset": 192,
+     "length": 4,
+     "source": 1,
+     "key": "scalar",
+     "dtype": "float32",
+     "shape": []
+    },
+    {
+     "name": "beta.onnx:param",
+     "dims": [
+      6
+     ],
+     "offset": 256,
+     "length": 24,
+     "source": 1,
+     "key": "param",
+     "dtype": "float32",
+     "shape": [
+      2,
+      3
+     ]
+    }
+   ]
+  }
+ ]
+}

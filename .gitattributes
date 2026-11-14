@@ -1,0 +1,2 @@
+# Checksummed test data: Windows line endings would change its bytes.
+fixtures/** -text

@@ -1,0 +1,30 @@
+[project]
+name = "onnx-spike"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "allin1==1.1.0",
+    "cmake>=4.4.4",
+    "cython<3",
+    "demucs>=4.0.1",
+    "madmom==0.16.1",
+    "natten==0.17.4",
+    "numpy==1.23.5",
+    "onnx>=1.19.0",
+    "onnxruntime>=1.31.1",
+    "setuptools<81",
+    "soundfile>=0.14.0",
+    "torch==2.5.1",
+    "torchaudio==2.5.1",
+    "wheel>=0.48.0",
+]
+
+[tool.uv]
+# NATTEN's setup.py imports torch at build time and must compile against the
+# exact torch in this venv, so it cannot build in an isolated env.
+no-build-isolation-package = ["natten", "madmom"]
+
+# Apple clang 21 rejects a std::is_arithmetic specialisation in torch 2.5's
+# c10 headers; downgrade that diagnostic so NATTEN's C++ CPU kernels compile.
+[tool.uv.extra-build-variables]
+natten = { CXXFLAGS = "-Wno-invalid-specialization", NATTEN_N_WORKERS = "10" }

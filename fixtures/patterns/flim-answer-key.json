@@ -1,0 +1,14 @@
+{
+  "song": "Flim", "hash": "f9368f9a", "source": "other",
+  "sections": { "start": 0, "intro1": 2.7, "intro2": 28.6, "inst1": 44.8, "inst2": 70.8, "inst3": 87.0,
+                "solo1": 113.0, "solo2": 129.2, "outro": 147.0, "end": 169.2 },
+  "rules": [
+    { "id": "start-one-slice", "kind": "oneSlice", "section": "start", "levels": [1, 2, 3, 4] },
+    { "id": "intro1-four-repeats", "kind": "repeats", "section": "intro1", "level": 1, "count": 4, "bars": 4 },
+    { "id": "intro1-deeper-consistent", "kind": "consistentDeeper", "section": "intro1", "parts": 4, "levels": [2, 3, 4] },
+    { "id": "intro2-two-bar-ideas", "kind": "partBars", "section": "intro2", "level": 1, "bars": 2 },
+    { "id": "intro2-first-is-new", "kind": "firstIsNew", "section": "intro2", "against": ["intro1"], "level": 1 },
+    { "id": "intro2-equals-solo1", "kind": "sameSequence", "a": "intro2", "b": "solo1", "level": 1 },
+    { "id": "intro2-last-not-inst-or-outro", "kind": "sliceNotIn", "section": "intro2", "slice": -1, "against": ["inst1", "inst2", "inst3", "outro"], "level": 1 }
+  ]
+}

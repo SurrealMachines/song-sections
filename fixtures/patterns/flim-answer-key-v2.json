@@ -1,0 +1,13 @@
+{
+  "song": "Flim", "hash": "f9368f9a", "source": "other",
+  "note": "Matt's phrase-level reading of the other stem (2026-11-03): B B B B | C C | D D D D (5 bars) | E E′ E′ E′ | C C | D′ D′ D′ D′. D and D′ are the same; E is B′ (B's melody over 2 other chords). On allin1's default markers, level 1.",
+  "sections": { "start": 0, "intro1": 2.7, "intro2": 28.6, "inst1": 44.8, "inst2": 70.8, "inst3": 87.0,
+                "solo1": 113.0, "solo2": 129.2, "outro": 147.0, "end": 169.2 },
+  "rules": [
+    { "id": "inst2-two-five-bar-ds", "kind": "slicesAlike", "section": "inst2", "level": 1, "count": 2, "slices": [0, 1], "bars": 5 },
+    { "id": "inst1-ends-in-inst2s-ds", "kind": "slicesAlike", "section": "inst1", "level": 1, "slices": [-2, -1], "bars": 5, "like": "inst2" },
+    { "id": "inst3-four-bar-phrases", "kind": "partBars", "section": "inst3", "level": 1, "bars": 4 },
+    { "id": "inst3-last-three-alike", "kind": "slicesAlike", "section": "inst3", "level": 1, "count": 4, "slices": [1, 2, 3], "bars": 4 },
+    { "id": "inst3-is-intro1-again", "kind": "basesRelated", "a": "inst3", "b": "intro1", "level": 1, "info": true }
+  ]
+}

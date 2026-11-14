@@ -1,0 +1,13 @@
+{
+  "name": "onnx-spike-node",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Node onnxruntime smoke test for the Song Sections ONNX spike",
+  "scripts": {
+    "smoke": "node smoke.mjs"
+  },
+  "dependencies": {
+    "onnxruntime-node": "1.31.1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "song-sections",
+    "displayName": "Song Sections",
+    "author": "Matt Jackson - Surreal Machines",
+    "entry": "dist/extension.js",
+    "version": "1.0.7",
+    "minimumApiVersion": "1.0.0",
+    "copyright": "Copyright (c) 2026 Matt Jackson - Surreal Machines. MIT License."
+}
